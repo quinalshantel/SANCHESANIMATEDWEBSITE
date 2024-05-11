@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated delete icon</title>
+    <link rel="icon" href="2.jpeg">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            padding-left: 15px;
+            overflow: hidden;
+        }
+        
+        .delet {
+            width: 33px;
+            height: 35px;
+            background-color: black;
+            border-radius: 0px 0px 8px 8px;
+            position: absolute;
+            bottom: -120px;
+            transition: all .5s;
+        }
+        
+        .delet::before,
+        .delet::after {
+            content: "";
+            position: absolute;
+            width: 1.6px;
+            height: 70%;
+            background-color: white;
+            top: 15%;
+        }
+        
+        .delet::before {
+            left: 20%;
+        }
+        
+        .delet::after {
+            right: 20%;
+        }
+        
+        .delet-tab {
+            width: 33px;
+            height: 5px;
+            background-color: black;
+            border-radius: 3px 3px 0px 0px;
+            margin-top: -7px;
+            position: relative;
+            transition: all .6s;
+        }
+        
+        .delet-tab::before {
+            content: "";
+            position: absolute;
+            width: 50%;
+            left: 25%;
+            top: -2px;
+            background-color: black;
+            height: 3px;
+            border-radius: 3px 3px 0px 0px;
+        }
+        
+        #mike {
+            position: absolute;
+            z-index: -999;
+            bottom: 120px;
+            font-size: 30px;
+            left: 10px;
+            transition: all 1.7s;
+        }
+        
+        #but {
+            width: 90px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="delet">
+            <i id="mike" class="fas fa-microphone"></i>
+            <div class="delet-tab"></div>
+        </div>
+        <button id="but" onclick="start()">Delete</button>
+    </div>
+</body>
+<script>
+    function start() {
+        var a = document.querySelector(".delet").style.transform = "translateY(-120px)";
+        var c = document.getElementById("mike");
+        c.style.transform = "rotate(-360deg)";
+
+        setTimeout(() => {
+            c.style.bottom = "-5px";
+            var b = document.querySelector(".delet-tab");
+            b.style.transform = "translateX(-20px) rotate(-50deg)";
+
+            setTimeout(() => {
+                b.style.transform = "translateX(0px) rotate(0deg)";
+            }, 1000);
+
+        }, 300);
+    }
+</script>
+
+</html>
+deleticon.html
+Displaying deleticon.html.
